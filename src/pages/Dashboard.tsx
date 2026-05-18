@@ -7,7 +7,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Loader2, AlertCircle, RefreshCw, ArrowRight, Zap, Users, ChevronDown, Calendar, CheckCircle, XCircle, RotateCcw, UserMinus, MessageSquare, ShieldCheck, TrendingUp, DollarSign, UserCheck } from "lucide-react";
 import { fetchDashboardData, IA_TAG, FIELD_IDS, type FieldEvent, type TagDeletedEvent } from "@/lib/kommo-api";
 import { isConnected } from "@/lib/kommo-storage";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "@tanstack/react-router";
 import type { KommoLead } from "@/types/kommo";
 
 export default function Dashboard() {
@@ -42,7 +42,7 @@ export default function Dashboard() {
       <div className="flex flex-col items-center justify-center min-h-[60vh] space-y-4">
         <Zap className="w-10 h-10 text-psi-wine" />
         <h2 className="text-xl font-bold">Conecte sua Kommo</h2>
-        <Button onClick={() => navigate("/integracoes")} className="bg-primary text-primary-foreground">
+        <Button onClick={() => navigate({ to: "/integracoes" })} className="bg-primary text-primary-foreground">
           <ArrowRight className="w-4 h-4 mr-2" /> Ir para Integrações
         </Button>
       </div>
