@@ -1,15 +1,14 @@
 import { createClient } from "@supabase/supabase-js";
 
-// Public/publishable credentials only — safe to ship in the browser bundle.
+// Public/publishable credentials — safe to ship in the browser bundle.
 const SUPABASE_URL =
   (import.meta.env.VITE_SUPABASE_URL as string | undefined) ||
-  (import.meta.env.VITE_SUPABASE_PROJECT_URL as string | undefined) ||
-  "";
+  "https://kvrupsbmrcenihpmbdyd.supabase.co";
 
 const SUPABASE_ANON_KEY =
   (import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY as string | undefined) ||
   (import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined) ||
-  "";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt2cnVwc2JtcmNlbmlocG1iZHlkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg5OTUzMTMsImV4cCI6MjA5NDU3MTMxM30.H18GLABc_h6sqU4B69tfklLUA1salYfqrAIRZOfAxDw";
 
 export const supabase =
   SUPABASE_URL && SUPABASE_ANON_KEY
