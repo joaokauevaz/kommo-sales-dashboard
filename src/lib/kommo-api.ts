@@ -37,7 +37,7 @@ async function callEngine(
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${supabase?.["supabaseKey"] ?? import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+      Authorization: `Bearer ${getSupabaseAnonKey()}`,
     },
     body: JSON.stringify(body),
   });
