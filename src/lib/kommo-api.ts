@@ -1,4 +1,4 @@
-import { supabase, getSupabaseUrl, isSupabaseConfigured } from "./supabase";
+import { getSupabaseUrl, getSupabaseAnonKey, isSupabaseConfigured } from "./supabase";
 import { getCredentials } from "./kommo-storage";
 import type {
   KommoEngineRequest,
