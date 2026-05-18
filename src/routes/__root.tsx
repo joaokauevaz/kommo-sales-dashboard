@@ -7,9 +7,6 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import AppLayout from "@/components/AppLayout";
 
 import appCss from "../styles.css?url";
 
@@ -75,11 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SalesRev — Dashboard Kommo" },
-      { name: "description", content: "Dashboard de vendas integrado ao Kommo CRM" },
-      { property: "og:title", content: "SalesRev — Dashboard Kommo" },
-      { property: "og:description", content: "Dashboard de vendas integrado ao Kommo CRM" },
+      { title: "Dashboard CRM" },
+      { name: "description", content: "CRM SalesRev Dashboard visualizes sales data from Kommo CRM, connecting to Supabase for data management." },
+      { name: "author", content: "Lovable" },
+      { property: "og:title", content: "Dashboard CRM" },
+      { property: "og:description", content: "CRM SalesRev Dashboard visualizes sales data from Kommo CRM, connecting to Supabase for data management." },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Dashboard CRM" },
+      { name: "twitter:description", content: "CRM SalesRev Dashboard visualizes sales data from Kommo CRM, connecting to Supabase for data management." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/73d2e4ac-f1c0-47ec-8adc-9fadce1161c5/id-preview-3f86c04f--df4a9537-fe1b-4eae-84b9-8c2948bf6698.lovable.app-1779064641506.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/73d2e4ac-f1c0-47ec-8adc-9fadce1161c5/id-preview-3f86c04f--df4a9537-fe1b-4eae-84b9-8c2948bf6698.lovable.app-1779064641506.png" },
     ],
     links: [
       {
@@ -113,12 +117,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <AppLayout>
-          <Outlet />
-        </AppLayout>
-        <Sonner />
-      </TooltipProvider>
+      <Outlet />
     </QueryClientProvider>
   );
 }
